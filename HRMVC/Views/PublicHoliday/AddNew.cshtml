@@ -1,0 +1,77 @@
+﻿<div class="modal" tabindex="-1" role="dialog" id="AddNew">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="AddNewBranch">Add New</h5>
+                <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <form method="post" asp-controller="PublicHoliday" asp-action="AddNew">
+                <div class="modal-body">
+
+                    
+
+                    <div class="form-group">
+                        <label>English:</label>
+                        <input type="text" class="form-control" name="Enname">
+                    </div>
+                    <div class="form-group">
+                        <label>Arabic:</label>
+                        <input type="text" class="form-control" name="Arname">
+                    </div>
+                    <div class="form-group">
+                        <label>From Date:</label>
+                        <input type="date" class="form-control" name="Fdate" id="dateofbirth">
+                    </div>
+                    <div class="form-group">
+                        <label>To Date:</label>
+                        <input type="date" class="form-control" name="Tdate" id="dateofbirth">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button type="submit" class="btn btn-primary" data-save="modal" value="AddNew">Save </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+@section Styles
+{
+<style type="text/css">
+    [type="date"] {
+        background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+    }
+
+        [type="date"]::-webkit-inner-spin-button {
+            display: none;
+        }
+
+        [type="date"]::-webkit-calendar-picker-indicator {
+            opacity: 0;
+        }
+
+    /* custom styles */
+    body {
+        padding: 4em;
+        background: #e5e5e5;
+        font: 13px/1.4 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    }
+
+    label {
+        display: block;
+    }
+
+    input {
+        border: 1px solid #c4c4c4;
+        border-radius: 5px;
+        background-color: #fff;
+        padding: 3px 5px;
+        box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+        width: 190px;
+    }
+</style>
+}
