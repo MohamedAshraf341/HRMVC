@@ -1,0 +1,92 @@
+﻿@model IEnumerable<HRMVC.Models.atttables>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>PublicHoliday</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Table Of All PublicHoliday</h3>
+
+                        </div>
+                        <div class="p-2 flex-grow-1 bd-highlight">
+                            <a class="btn btn-info add-new" data-toggle="modal" data-target="#AddNew">
+                                <i class="fa fa-plus"></i>Add PublicHoliday
+                            </a>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>English</th>
+                                        <th>Arabic</th>
+                                        <th>From Date</th>
+                                        <th>To date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var r in Model)
+                                    {
+                                        <tr>
+                                            <td>@r.Enname</td>
+                                            <td>@r.Arname</td>
+                                            <td>@r.Fdate</td>
+                                            <td>@r.Tdate</td>
+                                            <td>
+                                                <a class=" btn btn-primary mr-2" asp-controller="PublicHoliday" asp-action="Edit" asp-route-id="@r.Id"> <i class="fa fa-edit"></i> Edit</a>
+                                                <button type="button" class="delete btn btn-danger mr-2" data-toggle="modal" data-target="#Delete" data-id="@r.Id" ><i class="fa fa-trash"></i> Delete</button>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Arabic</th>
+                                        <th>English</th>
+                                        <th>From Date</th>
+                                        <th>TO date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<!-- commet table-->
+
+<partial name="AddNew" />
+<partial name="Delete" />

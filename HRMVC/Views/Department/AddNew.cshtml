@@ -1,0 +1,28 @@
+﻿<div class="modal" tabindex="-1" role="dialog" id="AddNew">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="AddNewBranch">Add New</h5>
+                <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <form method="post" asp-controller="Department" asp-action="AddNew">
+                <div class="modal-body" >
+
+                    <div class="form-group">
+                        <label>English:</label>
+                        <input   type="text" class="form-control" name="Enname">
+                    </div>
+                    <div class="form-group">
+                        <label>Arabic:</label>
+                        <input  type="text" class="form-control" name="Arname">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"  class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button type="submit" class="btn btn-primary" data-save="modal" value="AddNew">Save </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

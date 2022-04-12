@@ -1,0 +1,22 @@
+﻿<div class="modal" tabindex="-1" role="document" id="Delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" >Delete </h5>
+                <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <form method="post" asp-controller="Branch" asp-action="Delete">
+                <div class="modal-body">
+                    <div>
+                        <p>Are you sure Delete?</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">No</button>
+                    <button type="submit" class="btn btn-primary" data-save="modal" name="id" id="id">Yes</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
