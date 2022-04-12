@@ -1,4 +1,3 @@
-.HRMVC/vs/HRMVC/config
-.HRMVC/Site4Check
-.HRMVC/HRMVC/bin/Debug/net5.0
-.HRMVC/HRMVC/obj
+.vs/HRMVC/config
+HRMVC/bin/Debug/net5.0
+HRMVC/obj
